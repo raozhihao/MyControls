@@ -35,7 +35,6 @@ namespace MyTextLine
             set
             {
                 autoSize = value;
-               // TextColorChanged?.Invoke (this , ea);
                 //更改了此值后判断
                 if ( value )
                 {
@@ -267,12 +266,6 @@ namespace MyTextLine
         protected override void OnMouseDown (MouseEventArgs e)
         {
             base.OnMouseDown (e);
-
-            if ( ReadOnly )
-            {
-                //如果选择了不可编辑,则取消
-                return;
-            }
             //当鼠标点击的时候,让其可编辑
             //思路就是参照DataGridVeiw中的编辑功能
             //在当前控件的位置放置一个TextBox
@@ -292,7 +285,7 @@ namespace MyTextLine
         protected override void OnEnter (EventArgs e)
         {
             base.OnEnter (e);
-            
+          
             //调用控件中的文本框进入事件
             LineBox_Enter (LineBox,new EventArgs());
         }
@@ -404,6 +397,12 @@ namespace MyTextLine
             LineBox.BackColor = this.BackColor;
             LineBox.ForeColor = this.ForeColor;
             LineBox.Font = this.Font;
+            if ( ReadOnly )
+            {
+                //如果选择了不可编辑,则取消
+                LineBox.ReadOnly = true;
+                
+            }
             //使文本框得到焦点
             LineBox.SelectionStart = LineBox.TextLength;
             LineBox.Select ();

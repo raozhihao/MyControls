@@ -28,59 +28,17 @@
         /// </summary>
         private void InitializeComponent ()
         {
-            this.myTextLine1 = new MyTextLine.MyTextLine();
-            this.myTextLine2 = new MyTextLine.MyTextLine();
-            this.myTextLine3 = new MyTextLine.MyTextLine();
-            this.myTextLine4 = new MyTextLine.MyTextLine();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.myTextLine5 = new MyTextLine.MyTextLine();
+            this.myTextLine4 = new MyTextLine.MyTextLine();
+            this.myTextLine3 = new MyTextLine.MyTextLine();
+            this.myTextLine2 = new MyTextLine.MyTextLine();
+            this.myTextLine1 = new MyTextLine.MyTextLine();
             this.SuspendLayout();
-            // 
-            // myTextLine1
-            // 
-            this.myTextLine1.LineBold = 0;
-            this.myTextLine1.Location = new System.Drawing.Point(190, 46);
-            this.myTextLine1.Name = "myTextLine1";
-            this.myTextLine1.PassWordChar = '\0';
-            this.myTextLine1.Size = new System.Drawing.Size(75, 23);
-            this.myTextLine1.TabIndex = 0;
-            this.myTextLine1.Text = "myTextLine1";
-            // 
-            // myTextLine2
-            // 
-            this.myTextLine2.Location = new System.Drawing.Point(190, 109);
-            this.myTextLine2.Name = "myTextLine2";
-            this.myTextLine2.PassWordChar = '\0';
-            this.myTextLine2.Size = new System.Drawing.Size(75, 23);
-            this.myTextLine2.TabIndex = 1;
-            this.myTextLine2.Text = "myTextLine2";
-            // 
-            // myTextLine3
-            // 
-            this.myTextLine3.Location = new System.Drawing.Point(190, 172);
-            this.myTextLine3.Name = "myTextLine3";
-            this.myTextLine3.PassWordChar = '*';
-            this.myTextLine3.Size = new System.Drawing.Size(75, 23);
-            this.myTextLine3.TabIndex = 2;
-            this.myTextLine3.Text = "myTextLine3";
-            // 
-            // myTextLine4
-            // 
-            this.myTextLine4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.myTextLine4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.myTextLine4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.myTextLine4.LineBold = 10;
-            this.myTextLine4.LineColor = System.Drawing.Color.DarkRed;
-            this.myTextLine4.Location = new System.Drawing.Point(190, 235);
-            this.myTextLine4.Name = "myTextLine4";
-            this.myTextLine4.PassWordChar = '\0';
-            this.myTextLine4.Size = new System.Drawing.Size(151, 43);
-            this.myTextLine4.TabIndex = 3;
-            this.myTextLine4.Text = "myTextLine4";
             // 
             // label1
             // 
@@ -139,6 +97,49 @@
             this.myTextLine5.Size = new System.Drawing.Size(111, 28);
             this.myTextLine5.TabIndex = 5;
             this.myTextLine5.Text = "myTextLine5";
+            // 
+            // myTextLine4
+            // 
+            this.myTextLine4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.myTextLine4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.myTextLine4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.myTextLine4.LineBold = 10;
+            this.myTextLine4.LineColor = System.Drawing.Color.DarkRed;
+            this.myTextLine4.Location = new System.Drawing.Point(190, 235);
+            this.myTextLine4.Name = "myTextLine4";
+            this.myTextLine4.PassWordChar = '\0';
+            this.myTextLine4.Size = new System.Drawing.Size(151, 43);
+            this.myTextLine4.TabIndex = 3;
+            this.myTextLine4.Text = "myTextLine4";
+            // 
+            // myTextLine3
+            // 
+            this.myTextLine3.Location = new System.Drawing.Point(190, 172);
+            this.myTextLine3.Name = "myTextLine3";
+            this.myTextLine3.PassWordChar = '*';
+            this.myTextLine3.Size = new System.Drawing.Size(75, 23);
+            this.myTextLine3.TabIndex = 2;
+            this.myTextLine3.Text = "myTextLine3";
+            // 
+            // myTextLine2
+            // 
+            this.myTextLine2.Location = new System.Drawing.Point(190, 109);
+            this.myTextLine2.Name = "myTextLine2";
+            this.myTextLine2.PassWordChar = '\0';
+            this.myTextLine2.ReadOnly = true;
+            this.myTextLine2.Size = new System.Drawing.Size(75, 23);
+            this.myTextLine2.TabIndex = 1;
+            this.myTextLine2.Text = "myTextLine2";
+            // 
+            // myTextLine1
+            // 
+            this.myTextLine1.LineBold = 0;
+            this.myTextLine1.Location = new System.Drawing.Point(190, 46);
+            this.myTextLine1.Name = "myTextLine1";
+            this.myTextLine1.PassWordChar = '\0';
+            this.myTextLine1.Size = new System.Drawing.Size(75, 23);
+            this.myTextLine1.TabIndex = 0;
+            this.myTextLine1.Text = "myTextLine1";
             // 
             // Main
             // 
