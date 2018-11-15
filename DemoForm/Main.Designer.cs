@@ -33,6 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.myTextLine6 = new MyTextLine.MyTextLine();
+            this.txtFiles = new MyTextLine.MyTextLine();
+            this.txtFileName = new MyTextLine.MyTextLine();
             this.myTextLine5 = new MyTextLine.MyTextLine();
             this.myTextLine4 = new MyTextLine.MyTextLine();
             this.myTextLine3 = new MyTextLine.MyTextLine();
@@ -85,6 +91,66 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "自动调整状态";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(375, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 12);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "输入或打开文件";
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(729, 50);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 8;
+            this.btnOpen.Text = "打开";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(398, 409);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.textBox1.Size = new System.Drawing.Size(326, 101);
+            this.textBox1.TabIndex = 10;
+            // 
+            // myTextLine6
+            // 
+            this.myTextLine6.Location = new System.Drawing.Point(88, 418);
+            this.myTextLine6.MultiLine = true;
+            this.myTextLine6.MyAutoSize = true;
+            this.myTextLine6.Name = "myTextLine6";
+            this.myTextLine6.PassWordChar = '\0';
+            this.myTextLine6.Scroll = System.Windows.Forms.ScrollBars.Both;
+            this.myTextLine6.Size = new System.Drawing.Size(72, 14);
+            this.myTextLine6.TabIndex = 12;
+            this.myTextLine6.Text = "myTextLine6";
+            // 
+            // txtFiles
+            // 
+            this.txtFiles.Location = new System.Drawing.Point(377, 90);
+            this.txtFiles.MultiLine = true;
+            this.txtFiles.Name = "txtFiles";
+            this.txtFiles.PassWordChar = '\0';
+            this.txtFiles.Scroll = System.Windows.Forms.ScrollBars.Both;
+            this.txtFiles.Size = new System.Drawing.Size(427, 226);
+            this.txtFiles.TabIndex = 11;
+            this.txtFiles.Text = "myTextLine6";
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.LineColor = System.Drawing.Color.DarkRed;
+            this.txtFileName.Location = new System.Drawing.Point(470, 50);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.PassWordChar = '\0';
+            this.txtFileName.Size = new System.Drawing.Size(241, 23);
+            this.txtFileName.TabIndex = 6;
+            // 
             // myTextLine5
             // 
             this.myTextLine5.Font = new System.Drawing.Font("微软雅黑", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -105,7 +171,7 @@
             this.myTextLine4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.myTextLine4.LineBold = 10;
             this.myTextLine4.LineColor = System.Drawing.Color.DarkRed;
-            this.myTextLine4.Location = new System.Drawing.Point(190, 235);
+            this.myTextLine4.Location = new System.Drawing.Point(181, 246);
             this.myTextLine4.Name = "myTextLine4";
             this.myTextLine4.PassWordChar = '\0';
             this.myTextLine4.Size = new System.Drawing.Size(151, 43);
@@ -147,6 +213,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(834, 522);
+            this.Controls.Add(this.myTextLine6);
+            this.Controls.Add(this.txtFiles);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.myTextLine5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -177,6 +249,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private MyTextLine.MyTextLine myTextLine5;
+        private MyTextLine.MyTextLine txtFileName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.TextBox textBox1;
+        private MyTextLine.MyTextLine txtFiles;
+        private MyTextLine.MyTextLine myTextLine6;
     }
 }
 

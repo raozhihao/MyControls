@@ -12,6 +12,87 @@ namespace MyTextLine
     public class MyTextLine : Control
     {
         /// <summary>
+        /// 滚动条类型
+        /// </summary>
+        private ScrollBars scrollBar;
+
+
+        /// <summary>
+        /// 设置滚动条,只有当在编辑状态时可见
+        /// </summary>
+        [
+           Category ("外观"),
+           DefaultValue (typeof(ScrollBars),"0"),
+           Description ("设置滚动条,只有当在编辑状态时可见,且只可在多行编辑时才可设置"),
+           Browsable (true),
+       ]
+        public ScrollBars Scroll
+        {
+            get { return scrollBar; }
+            set
+            {
+                
+                if ( multiLine )
+                {
+                    scrollBar = value;
+                }
+                else
+                {
+                    scrollBar = ScrollBars.None;
+                }
+                Invalidate ();
+            }
+        }
+     
+
+        /// <summary>
+        /// 设置是否可以多行输入
+        /// </summary>
+        private bool multiLine;
+
+        /// <summary>
+        /// 多行输入改变事件
+        /// </summary>
+        [
+           Category ("布局"),
+           Description ("多行输入已更改"),
+           Browsable (true),
+       ]
+        public event Action<object , EventArgs> MultiLineChanged;
+
+        /// <summary>
+        /// 设置是否可以多行输入
+        /// </summary>
+        [
+           Category ("布局"),
+           DefaultValue (false),
+           Description ("设置是否可以多行输入"),
+           Browsable (true),
+       ]
+        public bool MultiLine
+        {
+            get
+            {
+                return multiLine;
+            }
+            set
+            {
+                multiLine = value;
+                if ( !multiLine )
+                {
+                    this.scrollBar = ScrollBars.None;
+                }
+                else
+                {
+                    this.scrollBar = ScrollBars.Both;
+                }
+                MultiLineChanged?.Invoke (this , new EventArgs ());
+                Invalidate ();
+            }
+        }
+
+
+        /// <summary>
         /// 设置控件的宽度和高度是否随文字长度更改而改变
         /// </summary>
         private bool autoSize;
@@ -222,12 +303,18 @@ namespace MyTextLine
                 SizeF fontSize = g.MeasureString (Text , Font);
                 //设置当前Text应该画在控件的高度的位置
                 float drawHeighPoint = 0;
-                //如果当前控件的高度大于文字的高度
-                if ( (this.Size.Height-lineBold ) > fontSize.Height )
+
+                if ( !multiLine )
                 {
-                    //则应让文字在控件内垂直居中
-                    drawHeighPoint = ( this.Height - fontSize.Height-lineBold ) / 2;
+                    //如果当前的多行输入未打开
+                    //如果当前控件的高度大于文字的高度
+                    if ( ( this.Size.Height - lineBold ) > fontSize.Height )
+                    {
+                        //则应让文字在控件内垂直居中
+                        drawHeighPoint = ( this.Height - fontSize.Height - lineBold ) / 2;
+                    }
                 }
+                
                 //创建一个画刷对象
                 SolidBrush sb = new SolidBrush (ForeColor);
                 
@@ -363,7 +450,7 @@ namespace MyTextLine
             this.LineBox.Size = new System.Drawing.Size(100, 14);
             this.LineBox.TabIndex = 0;
             this.LineBox.Visible = false;
-            
+            this.LineBox.ScrollBars =this.scrollBar;
             // 
             // MyTextLine
             // 
@@ -381,11 +468,22 @@ namespace MyTextLine
                 //如果开启则也开启文本框的
                 LineBox.PasswordChar = passWordChar;
             }
+            if ( multiLine )
+            {
+                LineBox.Multiline = true;
+                LineBox.Location = new Point (0 , 0);
+                LineBox.Height = this.Height-lineBold;
+                LineBox.ScrollBars = this.scrollBar;
+            }
+            else
+            {
+                //[定位文本框
+                LineBox.Location = new Point (0 , ( this.Height - LineBold - LineBox.Height ) / 2);
+            }
 
             //显示文本框
             LineBox.Visible = true;
-            //[定位文本框
-            LineBox.Location =new Point(0, ( this.Height - LineBold - LineBox.Height ) / 2);
+           
             //设置文本框的一些其它属性
             LineBox.Width = this.Width;
             LineBox.Text = this.Text;
@@ -410,4 +508,5 @@ namespace MyTextLine
             this.Text = LineBox.Text;
         }
     }
+
 }
