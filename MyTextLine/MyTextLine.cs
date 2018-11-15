@@ -97,6 +97,9 @@ namespace MyTextLine
         /// </summary>
         private int lineBold;
 
+        /// <summary>
+        /// 在此控件上的一个文本框,用来供用户输入
+        /// </summary>
         private TextBox LineBox;
 
 
@@ -129,7 +132,7 @@ namespace MyTextLine
         [
           Category ("行为"),
              DefaultValue (false),
-          Description ("线条粗细度更改")
+          Description ("设置是否可以编辑文本")
       ]
         public bool ReadOnly
         {
@@ -142,7 +145,7 @@ namespace MyTextLine
         /// </summary>
         [
           Category ("行为"),
-          Description ("线条粗细度更改")
+          Description ("将输入的字符替换成指定的字符")
       ]
         public char PassWordChar
         {
@@ -358,7 +361,7 @@ namespace MyTextLine
             this.LineBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // LineBox
+            // LineBox 的一些属性的初始化
             // 
             this.LineBox.BackColor = System.Drawing.SystemColors.InfoText;
             this.LineBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
