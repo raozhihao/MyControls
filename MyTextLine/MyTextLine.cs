@@ -276,14 +276,6 @@ namespace MyTextLine
             
         }
 
-        private void Tb_KeyPress (object sender , KeyPressEventArgs e)
-        {
-            //如果当前按下的是Enter键
-            if ( e.KeyChar == 13 )
-            {
-                e.Handled = true;
-            }
-        }
        
         protected override void OnEnter (EventArgs e)
         {
@@ -407,8 +399,9 @@ namespace MyTextLine
                 
             }
             //使文本框得到焦点
+            LineBox.Focus ();
             LineBox.SelectionStart = LineBox.TextLength;
-            LineBox.Select ();
+            
         }
 
         private void LineBox_Leave (object sender , EventArgs e)
